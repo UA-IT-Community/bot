@@ -1,0 +1,29 @@
+{
+  "name": "it-community-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Main bot for UA IT Discord Community.",
+  "main": "index.js",
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
+  "imports": {
+    "#src/*": "./src/*.js",
+    "#root/*": "./*.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "UA IT Discord Community",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0"
+  }
+}
