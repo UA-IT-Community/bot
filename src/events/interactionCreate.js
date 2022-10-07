@@ -13,7 +13,7 @@ export default {
 			}
 			catch (error) {
 				console.error(error);
-				await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+				await interaction.reply({ content: 'Трапилась помилочка, повідомте про це адміністрації!', ephemeral: true });
 			}
 		}
 
@@ -28,7 +28,7 @@ export default {
 			}
 			catch (error) {
 				console.error(error);
-				await interaction.reply({ content: 'There was an error while executing this action!', ephemeral: true });
+				await interaction.reply({ content: 'Трапилась помилочка, повідомте про це адміністрації!', ephemeral: true });
 			}
 		}
 
@@ -42,7 +42,7 @@ export default {
 			}
 			catch (error) {
 				console.error(error);
-				await interaction.reply({ content: 'There was an error while executing this action!', ephemeral: true });
+				await interaction.reply({ content: 'Трапилась помилочка, повідомте про це адміністрації!', ephemeral: true });
 			}
 		}
 	},

@@ -19,8 +19,8 @@ clientFactory(async function(client) {
 				}
 			})
 		}),
-		load('src/buttons').then(buttons => buttons.each(button => client.buttons.set(button.id, button.execute))),
-		load('src/selects').then(selects => selects.each(select => client.selects.set(select.id, select.execute))),
+		load('src/buttons').then(buttons => buttons.each(button => client.buttons.set(button.id, button))),
+		load('src/selects').then(selects => selects.each(select => client.selects.set(select.id, select))),
 
 	])
 });
