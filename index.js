@@ -1,14 +1,26 @@
-const { Collection } = require('discord.js');
-const { importFiles, importButtons, importEvents } = require('./util');
-const clientFactory = require('./client');
+import { Collection } from 'discord.js'
+import { load } from './util.js';
+import clientFactory from './client.js';
 
-clientFactory(function(client) {
+clientFactory(async function(client) {
 	client.commands = new Collection;
 	client.buttons = new Collection;
 	client.selects = new Collection;
 
-	importEvents('src/events', client);
-	importFiles('src/commands', client.commands);
-	importButtons('src/buttons', client.buttons);
-	importButtons('src/selects', client.selects);
+
+	await Promise.all([
+		load('src/events').then(events => {
+			events.each(event => {
+				if (event.once) {
+					client.once(event.name, (...args) => event.execute(...args));
+				}
+				else {
+					client.on(event.name, (...args) => event.execute(...args));
+				}
+			})
+		}),
+		load('src/buttons').then(buttons => buttons.each(button => client.buttons.set(button.id, button.execute))),
+		load('src/selects').then(selects => selects.each(select => client.selects.set(select.id, select.execute))),
+
+	])
 });

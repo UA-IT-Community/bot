@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	id: 'work_field',
 	async execute(interaction) {
 

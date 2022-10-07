@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	id: 'rules_agree',
 	async execute(interaction) {
 		const memberRole = interaction.guild.roles.cache.get('992139055733149716');

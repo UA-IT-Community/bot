@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	id: 'seniority_level',
 	async execute(interaction) {
 

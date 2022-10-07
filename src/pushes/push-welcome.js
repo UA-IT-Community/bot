@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+import { MessageEmbed } from 'discord.js';
 import clientFactory from '#root/client'
 
 clientFactory(client => {
